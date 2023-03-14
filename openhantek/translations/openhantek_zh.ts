@@ -4,9 +4,8 @@
 <context>
     <name></name>
     <message>
-        <location filename="../src/usb/scopedevice.cpp" line="76"/>
         <source>Couldn&apos;t open device: %1</source>
-        <translation>无法打开设备：%1</translation>
+        <translation type="vanished">无法打开设备：%1</translation>
     </message>
 </context>
 <context>
@@ -77,17 +76,17 @@
         <translation type="vanished">勃勒克曼-纳托尔(Blackman-Nuttall)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="60"/>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="108"/>
         <source>Calculate power dissipation for load resistance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="78"/>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="122"/>
         <source>Show note values for audio frequencies</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="88"/>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="132"/>
         <source>Analysis</source>
         <translation>分析</translation>
     </message>
@@ -101,12 +100,11 @@
         <translation>FFT窗函数</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="19"/>
         <source>Reference level&lt;br/&gt;&amp;bull; 0 dBu = -2.2 dBV&lt;br/&gt;&amp;bull; 0 dBm (@600 &amp;Omega;) = -2.2 dBV&lt;br/&gt;&amp;bull; 0 dBm (@50 &amp;Omega;) = -13 dBV</source>
-        <translation>参考电平&lt;br/&gt;&amp;bull; 0 dBu = -2.2 dBV&lt;br/&gt;&amp;bull; 0 dBm (@600 &amp;Omega;) = -2.2 dBV&lt;br/&gt;&amp;bull; 0 dBm (@50 &amp;Omega;) = -13 dBV</translation>
+        <translation type="vanished">参考电平&lt;br/&gt;&amp;bull; 0 dBu = -2.2 dBV&lt;br/&gt;&amp;bull; 0 dBm (@600 &amp;Omega;) = -2.2 dBV&lt;br/&gt;&amp;bull; 0 dBm (@50 &amp;Omega;) = -13 dBV</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="44"/>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="30"/>
         <source>Optimize FFT (slower startup, but lower CPU load)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -115,7 +113,7 @@
         <translation type="vanished">计算负载电阻的功耗&lt;br/&gt;(0=关闭)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="33"/>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="19"/>
         <source>Minimum magnitude</source>
         <translation>最小幅值</translation>
     </message>
@@ -128,8 +126,7 @@
         <translation type="vanished">&lt;b&gt;参考电平&lt;/b&gt;&lt;br/&gt;0 dBu = -2,2 dBV&lt;br/&gt;0 dBm (@600 &amp;Omega;) = -2,2 dBV&lt;br/&gt;0 dBm (@50 &amp;Omega;) = -13 dBV</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="28"/>
-        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="39"/>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="62"/>
         <source>dBV</source>
         <translation>dBV</translation>
     </message>
@@ -138,17 +135,80 @@
         <translation type="vanished">&lt;b&gt;最小幅值&lt;/b&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="57"/>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="40"/>
         <source>Spectrum</source>
         <translation>频谱分析</translation>
     </message>
     <message>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="44"/>
+        <source>Position</source>
+        <translation>位置</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="46"/>
+        <source>Left</source>
+        <translation>左</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="47"/>
+        <source>Right</source>
+        <translation>右</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="53"/>
+        <source>Cursors</source>
+        <translation>光标</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="69"/>
+        <source>0 dBV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="70"/>
+        <source>&lt;p&gt;= 1 Vrms&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="71"/>
+        <source>0 dBu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="73"/>
+        <source>0 dBm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="25"/>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="86"/>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="92"/>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="98"/>
+        <source>dB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="104"/>
+        <source>Set Reference Level</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="72"/>
+        <source>&lt;p&gt;= -2.2 dBV (1 mW @ 600 &amp;Omega;)&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="74"/>
+        <source>&lt;p&gt;= -13 dBV (1 mW @ 50 &amp;Omega;)&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="114"/>
         <source>&lt;p&gt;&amp;Omega;&lt;/p&gt;</source>
         <translation>&lt;p&gt;&amp;Omega;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="75"/>
+        <location filename="../src/configdialog/DsoConfigAnalysisPage.cpp" line="119"/>
         <source>Calculate total harmonic distortion (THD)</source>
         <translation>计算总谐波失真(THD)</translation>
     </message>
@@ -210,22 +270,22 @@
         <translation>电压</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="132"/>
+        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="140"/>
         <source>Auto</source>
         <translation>自动</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="132"/>
+        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="140"/>
         <source>Light</source>
         <translation>浅色</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="132"/>
+        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="140"/>
         <source>Dark</source>
         <translation>深色</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="133"/>
+        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="141"/>
         <source>Theme (restart needed to apply the change)</source>
         <translation>主题 (需要重启)</translation>
     </message>
@@ -245,17 +305,17 @@
         <translation>频谱</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="127"/>
+        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="123"/>
         <source>Fusion style (restart needed to apply the change)</source>
         <translation> &quot;融合&quot; 风格 (需要重启)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="140"/>
+        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="131"/>
         <source>Font size (restart needed to apply the change)</source>
         <translation>字体大小(需要重启)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="123"/>
+        <location filename="../src/configdialog/DsoConfigColorsPage.cpp" line="127"/>
         <source>Export hardcopy images or pdf files with printer colors</source>
         <translation>输出显示区域截屏为打印颜色</translation>
     </message>
@@ -426,6 +486,11 @@
         <translation>插值模式</translation>
     </message>
     <message>
+        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="63"/>
+        <source>Upscale exported images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="36"/>
         <source>Digital phosphor depth</source>
         <translation>数字余辉深度</translation>
@@ -441,32 +506,28 @@
         <translation>波形</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="57"/>
         <source>Position</source>
-        <translation>位置</translation>
+        <translation type="vanished">位置</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="59"/>
         <source>Left</source>
-        <translation>左</translation>
+        <translation type="vanished">左</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="60"/>
         <source>Right</source>
-        <translation>右</translation>
+        <translation type="vanished">右</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="66"/>
         <source>Cursors</source>
-        <translation>光标</translation>
+        <translation type="vanished">光标</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="70"/>
+        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="57"/>
         <source>Export 1:1 zoomed screen in double height</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="72"/>
+        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="59"/>
         <source>Zoom area height factor</source>
         <translation type="unfinished"></translation>
     </message>
@@ -475,7 +536,7 @@
         <translation type="vanished">以双倍高度导出放大后的屏幕</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="82"/>
+        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="77"/>
         <source>Zoom</source>
         <translation type="unfinished"></translation>
     </message>
@@ -484,17 +545,17 @@
         <translation type="vanished">导出</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="92"/>
+        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="87"/>
         <source>Scope has hardware modification for AC coupling (restart needed to apply the change)</source>
         <translation>示波器已经经过硬件修改支持AC耦合(需要重启)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="94"/>
+        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="89"/>
         <source>Show tooltips for user interface (restart needed to apply the change)</source>
         <translation>显示用户界面的工具提示（应用变化需要重新启动）</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="86"/>
+        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="81"/>
         <source>Save settings on exit</source>
         <translation>退出时保存配置</translation>
     </message>
@@ -503,12 +564,12 @@
         <translation type="vanished">字体大小(需要重启)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="88"/>
+        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="83"/>
         <source>Apply default settings after next restart</source>
         <translation>下次重启恢复默认配置</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="90"/>
+        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="85"/>
         <source>Save settings now</source>
         <translation>马上保存配置</translation>
     </message>
@@ -525,7 +586,7 @@
         <translation type="vanished">马上保存配置</translation>
     </message>
     <message>
-        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="107"/>
+        <location filename="../src/configdialog/DsoConfigScopePage.cpp" line="102"/>
         <source>Configuration</source>
         <translation>配置</translation>
     </message>
@@ -617,28 +678,46 @@
     </message>
 </context>
 <context>
+    <name>DsoSettingsScopeAnalysis</name>
+    <message>
+        <location filename="../src/scopesettings.h" line="71"/>
+        <source>V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/scopesettings.h" line="72"/>
+        <source>u</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/scopesettings.h" line="73"/>
+        <source>m</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DsoWidget</name>
     <message>
         <source>Zoom x%L1</source>
         <translation type="vanished">放大 x%L1</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="646"/>
-        <location filename="../src/dsowidget.cpp" line="648"/>
-        <location filename="../src/dsowidget.cpp" line="689"/>
-        <location filename="../src/dsowidget.cpp" line="736"/>
-        <location filename="../src/dsowidget.cpp" line="745"/>
-        <location filename="../src/dsowidget.cpp" line="766"/>
+        <location filename="../src/dsowidget.cpp" line="649"/>
+        <location filename="../src/dsowidget.cpp" line="651"/>
+        <location filename="../src/dsowidget.cpp" line="692"/>
+        <location filename="../src/dsowidget.cpp" line="739"/>
+        <location filename="../src/dsowidget.cpp" line="748"/>
+        <location filename="../src/dsowidget.cpp" line="769"/>
         <source>/div</source>
         <translation>/div</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="944"/>
+        <location filename="../src/dsowidget.cpp" line="947"/>
         <source>&lt;b&gt; OFFSET CALIBRATION &lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="952"/>
+        <location filename="../src/dsowidget.cpp" line="955"/>
         <source>TR</source>
         <translation>TR</translation>
     </message>
@@ -648,44 +727,44 @@
         <translation>光标</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="449"/>
+        <location filename="../src/dsowidget.cpp" line="451"/>
         <source>Trace position, drag the channel name up or down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="471"/>
+        <location filename="../src/dsowidget.cpp" line="473"/>
         <source>Trigger position, drag the arrow left or right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="481"/>
+        <location filename="../src/dsowidget.cpp" line="483"/>
         <source>Trigger level, drag the arrow up or down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="495"/>
+        <location filename="../src/dsowidget.cpp" line="497"/>
         <source>Measure or zoom marker &apos;1&apos; and &apos;2&apos;, drag left or right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="592"/>
-        <location filename="../src/dsowidget.cpp" line="610"/>
+        <location filename="../src/dsowidget.cpp" line="594"/>
+        <location filename="../src/dsowidget.cpp" line="612"/>
         <source>ON</source>
         <translation>ON</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="596"/>
-        <location filename="../src/dsowidget.cpp" line="614"/>
+        <location filename="../src/dsowidget.cpp" line="598"/>
+        <location filename="../src/dsowidget.cpp" line="617"/>
         <source>OFF</source>
         <translation>OFF</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="635"/>
+        <location filename="../src/dsowidget.cpp" line="638"/>
         <source>Markers  </source>
         <translation>光标  </translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="641"/>
+        <location filename="../src/dsowidget.cpp" line="644"/>
         <source>Zoom x%1  </source>
         <translation type="unfinished"></translation>
     </message>
@@ -702,7 +781,7 @@
         <translation type="vanished">放大 x%L1  </translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="644"/>
+        <location filename="../src/dsowidget.cpp" line="647"/>
         <source>Zoom ---  </source>
         <translation>放大 ---  </translation>
     </message>
@@ -711,22 +790,22 @@
         <translation type="vanished">%L1%</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="717"/>
+        <location filename="../src/dsowidget.cpp" line="720"/>
         <source>%1  %2  %3  %4  %5</source>
         <translation>%1  %2  %3  %4  %5</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="887"/>
+        <location filename="../src/dsowidget.cpp" line="890"/>
         <source> on screen</source>
         <translation> on screen</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="1000"/>
+        <location filename="../src/dsowidget.cpp" line="1004"/>
         <source>pp</source>
         <translation>pp</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="1006"/>
+        <location filename="../src/dsowidget.cpp" line="1010"/>
         <source>rms</source>
         <translation>rms</translation>
     </message>
@@ -743,7 +822,7 @@
         <translation type="vanished">%1  %2  %3  %4</translation>
     </message>
     <message>
-        <location filename="../src/dsowidget.cpp" line="756"/>
+        <location filename="../src/dsowidget.cpp" line="759"/>
         <source>/s</source>
         <translation>/s</translation>
     </message>
@@ -818,7 +897,7 @@
         <translation type="vanished">获取示波器通道数据失败</translation>
     </message>
     <message>
-        <location filename="../src/hantekdso/hantekdsocontrol.cpp" line="570"/>
+        <location filename="../src/hantekdso/hantekdsocontrol.cpp" line="569"/>
         <source>Couldn&apos;t get calibration data from oscilloscope&apos;s EEPROM. Use a config file for calibration!</source>
         <translation>从示波器EEPOM获取校准数据失败，请使用配置文件进行校准！</translation>
     </message>
@@ -1158,7 +1237,7 @@
         <translation type="obsolete">&amp;停止</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="376"/>
+        <location filename="../src/mainwindow.cpp" line="378"/>
         <source>Stop the oscilloscope</source>
         <translation>停止示波器</translation>
     </message>
@@ -1228,28 +1307,28 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="375"/>
+        <location filename="../src/mainwindow.cpp" line="377"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="379"/>
+        <location filename="../src/mainwindow.cpp" line="381"/>
         <source>Start</source>
         <translation>启动</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="380"/>
+        <location filename="../src/mainwindow.cpp" line="382"/>
         <source>Start the oscilloscope</source>
         <translation>启动示波器</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="401"/>
+        <location filename="../src/mainwindow.cpp" line="403"/>
         <source>Open file</source>
         <translation>打开文件</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="401"/>
-        <location filename="../src/mainwindow.cpp" line="426"/>
+        <location filename="../src/mainwindow.cpp" line="403"/>
+        <location filename="../src/mainwindow.cpp" line="428"/>
         <source>Settings (*.conf)</source>
         <translation>配置文件 (*.conf)</translation>
     </message>
@@ -1354,107 +1433,107 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="426"/>
+        <location filename="../src/mainwindow.cpp" line="428"/>
         <source>Save settings</source>
         <translation>保存配置</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="452"/>
+        <location filename="../src/mainwindow.cpp" line="454"/>
         <source>Disable fading of previous graphs</source>
         <translation>禁用波形的淡出</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="454"/>
+        <location filename="../src/mainwindow.cpp" line="456"/>
         <source>Enable fading of previous graphs</source>
         <translation>使能波形的淡出</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="462"/>
+        <location filename="../src/mainwindow.cpp" line="464"/>
         <source>Hide histogram</source>
         <translation>隐藏直方图</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="464"/>
+        <location filename="../src/mainwindow.cpp" line="466"/>
         <source>Show histogram</source>
         <translation>显示直方图</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="473"/>
+        <location filename="../src/mainwindow.cpp" line="475"/>
         <source>Hide magnified scope</source>
         <translation>隐藏波形放大窗口</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="475"/>
+        <location filename="../src/mainwindow.cpp" line="477"/>
         <source>Show magnified scope</source>
         <translation>显示波形放大窗口</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="485"/>
+        <location filename="../src/mainwindow.cpp" line="487"/>
         <source>Hide measurements</source>
         <translation>隐藏测量窗口</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="487"/>
+        <location filename="../src/mainwindow.cpp" line="489"/>
         <source>Show measurements</source>
         <translation>显示测量窗口</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="502"/>
+        <location filename="../src/mainwindow.cpp" line="504"/>
         <source>&lt;p&gt;Demo Mode&lt;/p&gt;</source>
         <translation>&lt;p&gt;演示模式&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="503"/>
+        <location filename="../src/mainwindow.cpp" line="505"/>
         <source>&lt;p&gt;Device: %1 (%2), FW%3&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="509"/>
+        <location filename="../src/mainwindow.cpp" line="511"/>
         <source>&lt;p&gt;Open source software for Hantek6022 USB oscilloscopes&lt;/p&gt;&lt;p&gt;Maintainer: Martin Homuth-Rosemann&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2010, 2011 Oliver Haag&lt;/p&gt;&lt;p&gt;Copyright &amp;copy; 2012-%1 OpenHantek community&lt;br/&gt;&lt;a href=&apos;https://github.com/OpenHantek&apos;&gt;https://github.com/OpenHantek&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Open source firmware copyright &amp;copy; 2019-%1 Ho-Ro&lt;br/&gt;&lt;a href=&apos;https://github.com/Ho-Ro/Hantek6022API&apos;&gt;https://github.com/Ho-Ro/Hantek6022API&lt;/a&gt;&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="520"/>
+        <location filename="../src/mainwindow.cpp" line="522"/>
         <source>&lt;p&gt;Graphic: %1 - GLSL version %2&lt;/p&gt;&lt;p&gt;Qt version: %3&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="524"/>
+        <location filename="../src/mainwindow.cpp" line="526"/>
         <source>&lt;p&gt;Running since %1 seconds.&lt;/p&gt;</source>
         <translation>&lt;p&gt;已运行 %1 秒。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="555"/>
+        <location filename="../src/mainwindow.cpp" line="557"/>
         <source>%1: %2</source>
         <translation>%1: %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="577"/>
+        <location filename="../src/mainwindow.cpp" line="592"/>
         <source>yyyy-MM-dd hh:mm:ss</source>
         <translation>yyyy-MM-dd hh:mm:ss</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="578"/>
+        <location filename="../src/mainwindow.cpp" line="593"/>
         <source>yyyyMMdd_hhmmss</source>
         <translation>yyyyMMdd_hhmmss</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="613"/>
+        <location filename="../src/mainwindow.cpp" line="627"/>
         <source>Image (*.png *.jpg)</source>
         <translation>图像文件 (*.png *.jpg)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="613"/>
+        <location filename="../src/mainwindow.cpp" line="627"/>
         <source>Portable Document Format (*.pdf)</source>
         <translation>便携式文件格式 (*.pdf)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="614"/>
+        <location filename="../src/mainwindow.cpp" line="628"/>
         <source>Save screenshot</source>
         <translation>保存截图文件</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="645"/>
+        <location filename="../src/mainwindow.cpp" line="659"/>
         <source>Print oscillograph</source>
         <translation>打印波形</translation>
     </message>
@@ -2112,6 +2191,14 @@
     </message>
 </context>
 <context>
+    <name>ScopeDevice</name>
+    <message>
+        <location filename="../src/usb/scopedevice.cpp" line="77"/>
+        <source>Couldn&apos;t open device: %1</source>
+        <translation type="unfinished">无法打开设备：%1</translation>
+    </message>
+</context>
+<context>
     <name>SelectSupportedDevice</name>
     <message>
         <location filename="../src/selectdevice/selectsupporteddevice.ui" line="14"/>
@@ -2123,18 +2210,18 @@
         <translation type="vanished">支持的设备</translation>
     </message>
     <message>
-        <location filename="../src/selectdevice/selectsupporteddevice.ui" line="29"/>
+        <location filename="../src/selectdevice/selectsupporteddevice.ui" line="68"/>
         <source>Devices:</source>
         <translation>设备：</translation>
     </message>
     <message>
-        <location filename="../src/selectdevice/selectsupporteddevice.ui" line="36"/>
-        <location filename="../src/selectdevice/selectsupporteddevice.ui" line="46"/>
+        <location filename="../src/selectdevice/selectsupporteddevice.ui" line="39"/>
+        <location filename="../src/selectdevice/selectsupporteddevice.ui" line="52"/>
         <source>...</source>
         <translation>...</translation>
     </message>
     <message>
-        <location filename="../src/selectdevice/selectsupporteddevice.ui" line="75"/>
+        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="23"/>
         <source>Demo Mode</source>
         <translation>演示模式</translation>
     </message>
@@ -2179,43 +2266,48 @@
         <translation type="vanished">&lt;p&gt;&lt;br/&gt;&lt;b&gt;此设置已经准备就绪。&lt;/b&gt;&lt;/p&gt;&lt;p&gt;请参考 &lt;a href=&apos;https://github.com/OpenHantek/OpenHantek6022/blob/master/docs/OpenHantek6022_User_Manual.pdf&apos;&gt; 使用手册 &lt;/a&gt; 获取安全须知.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="96"/>
+        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="99"/>
         <source>&lt;p&gt;Upload in progress ...&lt;/p&gt;&lt;p&gt;&lt;b&gt;If the upload takes more than 30 s, please close this window &lt;br/&gt;and restart the program!&lt;/b&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;正在上传固件...&lt;/p&gt;&lt;p&gt;&lt;b&gt;如果上传时间超过30秒，请关闭此窗口&lt;br&gt;并且重启程序！&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="100"/>
+        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="103"/>
         <source>&lt;p&gt;&lt;br/&gt;&lt;b&gt;Connection failed!&lt;/b&gt;&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;br/&gt;&lt;b&gt;连接失败！&lt;/b&gt;&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="63"/>
-        <source>&lt;p&gt;OpenHantek6022 is searching for compatible devices ...&lt;/p&gt;&lt;p&gt;&lt;img align=&apos;right&apos; height=&apos;200&apos; src=&apos;qrc:///switch_6022BL.png&apos;&gt;Don&apos;t forget to switch your device into oscilloscope mode if it has multiple modes.&lt;/p&gt;</source>
-        <translation>&lt;p&gt;OpenHantek6022正在搜索支持的设备...&lt;/p&gt;&lt;p&gt;&lt;img align=&apos;right&apos; height=&apos;200&apos; src=&apos;qrc:///switch_6022BL.png&apos;&gt;如果您的设备有多种模式，请不要忘记将其切换为示波器模式。&lt;/p&gt;</translation>
+        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="66"/>
+        <source>&lt;p&gt;OpenHantek6022 is searching for compatible devices ...&lt;/p&gt;&lt;p&gt;&lt;img align=&apos;right&apos; height=&apos;150&apos; src=&apos;:/switch_6022BL.png&apos;&gt;Don&apos;t forget to switch your device into oscilloscope mode if it has multiple modes.&lt;/p&gt;</source>
+        <translation>&lt;p&gt;OpenHantek6022正在搜索支持的设备...&lt;/p&gt;&lt;p&gt;&lt;img align=&apos;right&apos; height=&apos;150&apos; src=&apos;:/switch_6022BL.png&apos;&gt;如果您的设备有多种模式，请不要忘记将其切换为示波器模式。&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;p&gt;&lt;br/&gt;&lt;b&gt;The device is ready for use.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Please observe the &lt;a href=&apos;https://github.com/OpenHantek/OpenHantek6022/blob/main/docs/OpenHantek6022_User_Manual.pdf&apos;&gt;user manual&lt;/a&gt; for safe operation.&lt;/p&gt;</source>
         <translation type="vanished">&lt;p&gt;&lt;br/&gt;&lt;b&gt;此设备已经准备就绪。&lt;/b&gt;&lt;/p&gt;&lt;p&gt;请参考 &lt;a href=&apos;https://github.com/OpenHantek/OpenHantek6022/blob/main/docs/OpenHantek6022_User_Manual.pdf&apos;&gt;使用手册&lt;/a&gt; 获取安全须知。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="58"/>
+        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="61"/>
         <source>&lt;p&gt;&lt;br/&gt;&lt;b&gt;The device is ready for use.&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Please observe the &lt;a href=&apos;%1&apos;&gt;user manual&lt;/a&gt; for safe operation.&lt;/p&gt;</source>
         <translation>&lt;p&gt;&lt;br/&gt;&lt;b&gt;此设备已经准备就绪。&lt;/b&gt;&lt;/p&gt;&lt;p&gt;请参考 &lt;a href=&apos;%1&apos;&gt;使用手册&lt;/a&gt; 获取安全须知。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="67"/>
+        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="70"/>
         <source>&lt;p&gt;Please make sure you have installed the windows usb driver correctly&lt;/p&gt;</source>
         <translation>&lt;p&gt;请确认您已经正确安装了对应的驱动程序&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="72"/>
+        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="75"/>
         <source>&lt;p&gt;Please make sure you have copied the udev rules file to&lt;br/&gt;&lt;b&gt;%1&lt;/b&gt; or&lt;br/&gt;&lt;b&gt;%2&lt;/b&gt;&lt;br/&gt;for correct USB access permissions.&lt;/p&gt;</source>
         <translation>&lt;p&gt;请确保你已经将udev规则文件拷贝至&lt;br/&gt;&lt;b&gt;%1&lt;/b&gt; 或&lt;br/&gt;&lt;b&gt;%2&lt;/b&gt;&lt;br/&gt;以获取USB读写权限。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="79"/>
+        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="82"/>
         <source>&lt;p&gt;Visit the build and run instruction &lt;a href=&apos;https://github.com/OpenHantek/OpenHantek6022/blob/main/docs/build.md&apos;&gt;website&lt;/a&gt; for help.&lt;/p&gt;</source>
         <translation>&lt;p&gt;访问构建和运行指导 &lt;a href=&apos;https://github.com/OpenHantek/OpenHantek6022/blob/main/docs/build.md&apos;&gt;网站&lt;/a&gt; 获取进一步的帮助。&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="168"/>
+        <source>Can&apos;t initialize USB: %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;p&gt;Please make sure you have copied the udev rules file to&lt;br/&gt;&lt;b&gt;%1&lt;/b&gt; or&lt;br/&gt;&lt;b&gt;%2&lt;/b&gt; for correct USB access permissions.&lt;/p&gt;</source>
@@ -2230,14 +2322,13 @@
         <translation type="vanished">&lt;p&gt;访问构建和运行指导 &lt;a href=&apos;https://github.com/OpenHantek/OpenHantek6022/blob/master/docs/build.md&apos;&gt;网址&lt;/a&gt; 获取帮助。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="81"/>
+        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="84"/>
         <source>&lt;hr/&gt;&lt;p&gt;Even without a device you can explore the program&apos;s function. Just press the &lt;b&gt;Demo Mode&lt;/b&gt; button below.&lt;/p&gt;</source>
         <translation>&lt;hr/&gt;&lt;p&gt;即使没有真实设备，您仍然可以探索此程序的功能。请点击下方的 &lt;b&gt;演示模式&lt;/b&gt; 按钮。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/selectdevice/selectsupporteddevice.cpp" line="165"/>
         <source>Can&apos;t initalize USB: %1</source>
-        <translation>无法初始化 USB: %1</translation>
+        <translation type="vanished">无法初始化 USB: %1</translation>
     </message>
 </context>
 <context>
@@ -2386,30 +2477,35 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="133"/>
+        <location filename="../src/main.cpp" line="130"/>
         <location filename="../src/main.cpp" line="171"/>
         <source>Show the international interface, do not translate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="157"/>
+        <location filename="../src/main.cpp" line="154"/>
         <source>Load config file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="158"/>
+        <location filename="../src/main.cpp" line="155"/>
         <source>File</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="161"/>
+        <location filename="../src/main.cpp" line="158"/>
         <source>Demo mode without scope HW</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="164"/>
+        <location filename="../src/main.cpp" line="161"/>
         <source>Use OpenGL ES instead of OpenGL</source>
         <translation>使用OpenGL ES代替OpenGL</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="163"/>
+        <source>Do not connect automatically</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="166"/>

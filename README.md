@@ -6,12 +6,17 @@ to the *International Committee of the Red Cross*.
 ![blue-yellow](docs/images/blue-yellow.png)
 
 # OpenHantek6022
-[![Stability: Active](https://masterminds.github.io/stability/active.svg)](https://masterminds.github.io/stability/active.html)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/OpenHantek/OpenHantek6022)](https://github.com/OpenHantek/OpenHantek6022/releases)
-[![GitHub Release Date](https://img.shields.io/github/release-date/OpenHantek/OpenHantek6022?color=blue)](https://github.com/OpenHantek/OpenHantek6022/releases)
-[![GitHub commits since latest release](https://img.shields.io/github/commits-since/OpenHantek/OpenHantek6022/latest?color=blue)](https://github.com/OpenHantek/OpenHantek6022/commits/master)
-
 [![GitHub CI](https://github.com/OpenHantek/OpenHantek6022/actions/workflows/build_check.yml/badge.svg)](https://github.com/OpenHantek/OpenHantek6022/actions/workflows/build_check.yml)
+[![Stability: Active](https://masterminds.github.io/stability/active.svg)](https://masterminds.github.io/stability/active.html)
+[![Downloads total](https://img.shields.io/github/downloads/OpenHantek/OpenHantek6022/total?color=blue)](https://github.com/OpenHantek/OpenHantek6022/releases)
+
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/OpenHantek/OpenHantek6022)](https://github.com/OpenHantek/OpenHantek6022/releases/latest)
+[![GitHub Release Date](https://img.shields.io/github/release-date/OpenHantek/OpenHantek6022?color=blue)](https://github.com/OpenHantek/OpenHantek6022/releases/latest)
+[![Downloads of latest release](https://img.shields.io/github/downloads/OpenHantek/OpenHantek6022/latest/total?color=blue)](https://github.com/OpenHantek/OpenHantek6022/releases/latest)
+
+[![GitHub commits since latest release](https://img.shields.io/github/commits-since/OpenHantek/OpenHantek6022/latest?color=lightblue)](https://github.com/OpenHantek/OpenHantek6022/commits/main)
+[![Downloads of latest unstable](https://img.shields.io/github/downloads/OpenHantek/OpenHantek6022/unstable/total?color=lightblue)](https://github.com/OpenHantek/OpenHantek6022/releases/tag/unstable)
+
 
 OpenHantek6022 is a free software for **Hantek DSO6022** USB digital signal oscilloscopes that is actively developed on
 [github.com/OpenHantek/OpenHantek6022](https://github.com/OpenHantek/OpenHantek6022) - but only for Hantek 6022BE/BL and compatible scopes (Voltcraft, Darkwire, Protek, Acetech, etc.).
@@ -61,15 +66,17 @@ OpenHantek6022 is a free software for **Hantek DSO6022** USB digital signal osci
 * CH1 and CH2 name becomes red when input is clipped (bottom left).
 * Settable probe attenuation factor 1..1000 to accommodate a variety of different probes.
 * Measure and display Vpp, DC (average), AC, RMS and dB (of RMS) values as well as frequency of active channels.
+Display as *dBV* (0 dBV = 1 V rms), *dBu* (0 dBu = 1 mW @ 600 Ω) or *dBm* (0 dBu = 1 mW @ 50 Ω) can be selected in Oscilloscope/Settings/Analysis.
 * Display the power dissipation for a load resistance of 1..1000 Ω (optional, can be set in Oscilloscope/Settings/Analysis).
 * Display the THD of the signal (optional, can be enabled in Oscilloscope/Settings/Analysis).
 * Show the note values and deviation in cent (*twelve equal*, A = 440 Hz) for audio frequencies (optional, can be enabled in Oscilloscope/Settings/Analysis). Useful to tune e.g. your electrical guitar.
 * Math channel modes: CH1+CH2, CH1-CH2, CH2-CH1, CH1*CH2 and square, abs, sign, AC and DC part of CH1 or CH2.
 * Time base 10 ns/div .. 10 s/div.
-* Sample rates 100, 200, 500 S/s, 1, 2, 5, 10, 20, 50, 100, 200, 500 kS/s, 1, 2, 5, 10, 12, 15, 24, 30 MS/s (24 & 30 MS/s in CH1-only mode).
-* 48 MS/s not supported due to unstable USB data streaming.
+* Sample rates 100, 200, 500 S/s, 1, 2, 5, 10, 20, 50, 100, 200, 500 kS/s, 1, 2, 5, 10, 12, 15, 24, 30 MS/s (24 & 30 MS/s in CH1-only mode, 48 MS/s not supported due to unstable USB data streaming).
+* Hardware input gain automatically selected based on vertical sensitivity: 1x (up to ±5 V for 1, 2 or 5 V/div), 2x (up to ±2.5 V for 500 mV/div), 5x (up to ±1 V for 200 mV/div) and 10x (up to ±500 mV for 20 or 50 mV/div).
 * Downsampling (up to 200x) increases resolution and SNR.
-* Calibration output square wave signal frequency can be selected between 32 Hz .. 100 kHz in small steps (poor person's signal generator).
+* Calibration output square wave signal frequency can be selected between 32 Hz .. 100 kHz in small steps (*poor person's* signal generator).
+A [little HW modification](docs/HANTEK6022_Frequency_Generator_Modification.pdf) provides a jitter free HW-driven calibration output signal instead of the interrupt driven SW-output.
 * Trigger modes: *Normal*, *Auto* and *Single* with green/red status display (top left).
 * Untriggered *Roll* mode can be selected for slow time bases of 200 ms/div .. 10 s/div.
 * Trigger filter *HF* (trigger also on glitches), *Normal* and *LF* (for noisy signals).
@@ -125,8 +132,12 @@ To make building for Linux even easier, I provide two shell scripts:
 If you make small changes to the local source code, it is sufficient to call `make -j4` or `fakeroot make -j4 package` in the `build` directory.
 
 ## Install Prebuilt Binary Packages
-* Download Linux (Ubuntu 2004 LTS), Raspberry Pi (Debian stable), FreeBSD (12.1), macOS (Big Sur 11.6) and Windows (Visual Studio 2019) packages for your convenience from the [Releases](https://github.com/OpenHantek/OpenHantek6022/releases) page.
-* If you want to follow ongoing development, packages built from a fairly recent commit are available in the [unstable release](https://github.com/OpenHantek/OpenHantek6022/releases/tag/unstable).
+* [![Downloads of latest release](https://img.shields.io/github/downloads/OpenHantek/OpenHantek6022/latest/total?color=blue)](https://github.com/OpenHantek/OpenHantek6022/releases/latest)
+Download Linux (Ubuntu 2004 LTS), Raspberry Pi (Debian stable), FreeBSD (12.1), macOS (Big Sur 11.6) and Windows (Visual Studio 2019) packages for your convenience from the [Releases](https://github.com/OpenHantek/OpenHantek6022/releases) page.
+* [![Downloads of latest unstable](https://img.shields.io/github/downloads/OpenHantek/OpenHantek6022/unstable/total?color=lightblue)](https://github.com/OpenHantek/OpenHantek6022/releases/tag/unstable)
+If you want to follow ongoing development, packages built from a fairly recent commit are available in the rolling
+[unstable release](https://github.com/OpenHantek/OpenHantek6022/releases/tag/unstable).
+*Unstable* does not mean that the program will crash, but that individual features or elements of the GUI may still change.
 * For RPi4 see also [issue #28](https://github.com/OpenHantek/OpenHantek6022/issues/28).
 * These binary packages are built on stable operating system versions and require an up-to-date system.
 * As I develop on a *Debian stable* system my preferred (native) package format is `*.deb`.
@@ -146,6 +157,12 @@ On a Linux system start the program via the menu entry *OpenHantek (Digital Stor
 You can explore the look and feel of OpenHantek6022 without the need for real scope hardware by running it from the command line as: `OpenHantek --demoMode`.
 
 Note: To use the 6022BL in scope mode, make sure the "H/P" button is pressed before plugging in.
+
+### Using Hantek 6022BL LA Function
+The [Hantek6022BL](https://sigrok.org/wiki/Hantek_6022BL) can either be used as oscilloscope or as logic analyzer,
+but not both at the same time - it is not a mixed-signal-oscilloscope (MSO).
+If you want to use the LA part, then [sigrok](https://sigrok.org) is the way to go, it works (besides Linux) also for MacOS and Windows.
+There is no point in supporting the LA input from OpenHantek.
 
 ### Offset Calibration
 The oscilloscope has quite a large zero point error. To calibrate the offset quickly, simply proceed as follows:
@@ -175,18 +192,19 @@ You need to copy the file `utils/udev_rules/60-openhantek.rules` to `/etc/udev/r
 Note: If OpenHantek is installed from a `*.deb` or `*.rpm` package this file is installed automatically into `/usr/lib/udev/rules.d/`.
 * **_Windows_**  
 __Caution: The original Hantek driver for Windows doesn't work!__  
-You have to assign the correct WinUSB driver with _one_ of these three _alternatives_:
-  1. Install the individual signed `.inf` files `Hantek_6022Bx_xxxxxx.inf` [provided by fgrieu](https://github.com/OpenHantek/OpenHantek6022/pull/251), part of `openhantek_xxx_win_x64.zip` [binary distribution](https://github.com/OpenHantek/OpenHantek6022/releases). 
-  You can also download them as a [zip](https://downgit.github.io/#/home?url=https://github.com/OpenHantek/OpenHantek6022/tree/main/utils/signed-windows-inf-files)
-  (or individually with associated `.cat` from [utils/signed-windows-inf-files](https://github.com/OpenHantek/OpenHantek6022/tree/main/utils/signed-windows-inf-files)). Select the desired `Hantek_6022Bx_xxxxxx.inf` files (the 3 with the device name "BE" or "BL", or all 6) and select "install" from the pull-down menu. 
-  2. Install the signed `.inf` file `OpenHantek.inf` for all devices [provided by VictorEEV](https://www.eevblog.com/forum/testgear/hantek-6022be-20mhz-usb-dso/msg4418107/#msg4418107).
-  It's also part of the `openhantek_xxx_win_x64.zip` [binary distribution](https://github.com/OpenHantek/OpenHantek6022/releases).
-  Right-click on `OpenHantek.inf` and select "install" from the pull-down menu.
-  3. Run the [**Zadig**](docs/build.md#microsoft-windows-usb-driver-install-with-zadig) tool and follow the good [step-by-step tutorial](docs/OpenHantek6022_zadig_Win10.pdf) provided by [DaPa](https://github.com/DaPa).
+__You have to assign the correct WinUSB driver:__
 
- Note:  
- With alternative *i*, the Device Manager will show (under "Universal Serial Bus devices") the name and state according to the firmware loaded (e.g. `Hantek 6022BE loader`, `Hantek 6022BL openht`).
- The [PulseView/sigrok-cli](https://sigrok.org/) firmware is also recognized (e.g. `Hantek 6022BE sigrok`).
+  - The signed `.inf` file `OpenHantek.inf` for all devices - [provided by VictorEEV](https://www.eevblog.com/forum/testgear/hantek-6022be-20mhz-usb-dso/msg4418107/#msg4418107)
+  and [updated](https://github.com/OpenHantek/OpenHantek6022/pull/323) by [gitguest0](https://github.com/gitguest0) - 
+  is available in the `openhantek_xxx_win_x64.zip` [binary distribution](https://github.com/OpenHantek/OpenHantek6022/releases) in directory `driver`.
+
+  - Right-click on `OpenHantek.inf` and select "install" from the pull-down menu.
+
+  - The Device Manager will show (under "Universal Serial Bus devices") the name and state according to the firmware loaded (e.g. `Hantek 6022BE - Loader`, `Hantek 6022BE - OpenHantek`).
+  The [PulseView/sigrok-cli](https://sigrok.org/) firmware is also recognized (e.g. `Hantek 6022BE - Sigrok`).
+
+  It is recommended to use the `.inf` file, but it is also possible to alternatively use the [**Zadig**](docs/build.md#microsoft-windows-usb-driver-install-with-zadig) tool
+  and follow the good [step-by-step tutorial](docs/OpenHantek6022_zadig_Win10.pdf) provided by [DaPa](https://github.com/DaPa).
 
 ## Important!
 The scope doesn't store the firmware permanently in flash or eeprom, it must be uploaded after each power-up and is kept in ram 'til power-down.

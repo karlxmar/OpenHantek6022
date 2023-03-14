@@ -3,75 +3,16 @@
 # A tar.gz file is created for macOS (not tested).
 # A zip file is created on Windows (not tested).
 
-find_package(Git)
-
-if (GIT_EXECUTABLE AND EXISTS "${CMAKE_SOURCE_DIR}/.git")
-    execute_process(
-        COMMAND ${GIT_EXECUTABLE} log -1 --format=%h
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        RESULT_VARIABLE CMD_RESULT
-        OUTPUT_VARIABLE GIT_COMMIT_HASH
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-        )
-endif()
-message( STATUS "GIT_COMMIT_HASH: ${GIT_COMMIT_HASH}" )
-
-if(NOT DEFINED CMD_RESULT)
-    # no git result, use build date
-    set(VCS_BRANCH "main")
-    set(GIT_COMMIT_HASH "unknown")
-    string(TIMESTAMP DATE_VERSION "%Y%m%d")
-else()
-    # get commit date as "YYYYMMDD"
-    execute_process(
-        COMMAND ${GIT_EXECUTABLE} log -1 --pretty=%cd --date=format:%Y%m%d
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        RESULT_VARIABLE CMD_RESULT
-        OUTPUT_VARIABLE DATE_VERSION
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-    )
-    message( STATUS "DATE_VERSION: ${DATE_VERSION}" )
-
-    # get the git branch
-    execute_process(
-        COMMAND ${GIT_EXECUTABLE} status
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-        RESULT_VARIABLE CMD_RESULT
-        OUTPUT_VARIABLE DESCRIBE_STATUS
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-    )
-    string(REPLACE "\n" " " DESCRIBE_STATUS ${DESCRIBE_STATUS})
-    string(REPLACE "\r" " " DESCRIBE_STATUS ${DESCRIBE_STATUS})
-    string(REPLACE "\r\n" " " DESCRIBE_STATUS ${DESCRIBE_STATUS})
-    string(REPLACE " " ";" DESCRIBE_STATUS ${DESCRIBE_STATUS})
-    list(GET DESCRIBE_STATUS 2 VCS_BRANCH)
-    # message(STATUS "Branch: ${VCS_BRANCH}") # /${GIT_COMMIT_HASH}")
-
-    # get the remote URL
-    execute_process(
-        COMMAND ${GIT_EXECUTABLE} config --get remote.origin.url
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        RESULT_VARIABLE CMD_RESULT
-        OUTPUT_VARIABLE VCS_URL
-        OUTPUT_STRIP_TRAILING_WHITESPACE
-    )
-    # message( STATUS "VCS_URL: ${VCS_URL}")
-
-    # create a changelog of the last 20 changes
-    set(ENV{LANG} "en_US")
-    if(GIT_VERSION_STRING VERSION_LESS 2.6)
-        set(CHANGELOG "")
-    else()
-        execute_process(
-            COMMAND ${GIT_EXECUTABLE} log -n 20 "--date=format:%a %b %d %Y" "--pretty=format:* %ad %aN <%aE> %h - %s"
-            WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-            RESULT_VARIABLE CMD_RESULT
-            OUTPUT_VARIABLE CHANGELOG
-            OUTPUT_STRIP_TRAILING_WHITESPACE
-        )
-    endif()
-    file(WRITE "${CMAKE_BINARY_DIR}/changelog" "${CHANGELOG}")
-endif()
+# create a changelog of the last 20 changes
+set(ENV{LANG} "en_US")
+execute_process(
+    COMMAND ${GIT_EXECUTABLE} log -n 20 "--date=format:%a %b %d %Y" "--pretty=format:* %ad %aN <%aE> %h - %s"
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    RESULT_VARIABLE CMD_RESULT
+    OUTPUT_VARIABLE CHANGELOG
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+file(WRITE "${CMAKE_BINARY_DIR}/changelog" "${CHANGELOG}")
 
 if (UNIX)
     execute_process(
@@ -124,19 +65,17 @@ if (UNIX)
 elseif(WIN32)
     set(CPACK_TARGET "win_")
     set(CPACK_GENERATOR ${CPACK_GENERATOR} ZIP)
-    if ((MSVC AND CMAKE_GENERATOR MATCHES "Win64+") OR (CMAKE_SIZEOF_VOID_P EQUAL 8))
-        set(CPACK_ARCH "x64")
-    else()
-        set(CPACK_ARCH "x32")
-    endif()
+    set(CPACK_ARCH "x64")
 endif()
 
-message(STATUS "Package: ${CPACK_GENERATOR}")
-message(STATUS "Architecture: ${CPACK_ARCH}")
+string(TOLOWER ${CMAKE_PROJECT_NAME} CPACK_PACKAGE_NAME)
+set(CPACK_PACKAGE_VERSION "${VERSION}")
 
-set(CPACK_PACKAGE_NAME "openhantek")
-string(TOLOWER ${CPACK_PACKAGE_NAME} CPACK_PACKAGE_NAME)
-set(CPACK_PACKAGE_VERSION "${DATE_VERSION}-${GIT_COMMIT_HASH}")
+message(STATUS "CPACK_GENERATOR: ${CPACK_GENERATOR}")
+message(STATUS "CPACK_PACKAGE_NAME: ${CPACK_PACKAGE_NAME}")
+message(STATUS "CPACK_PACKAGE_VERSION: ${CPACK_PACKAGE_VERSION}")
+message(STATUS "CPACK_ARCH: ${CPACK_ARCH}")
+
 set(CPACK_PACKAGE_CONTACT "contact@openhantek.org")
 set(CPACK_PACKAGE_VENDOR "OpenHantek Community")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Digital oscilloscope software for Hantek DSO6022 USB hardware")
@@ -185,5 +124,3 @@ set(CMAKE_INSTALL_SYSTEM_RUNTIME_DESTINATION ".")
 include(InstallRequiredSystemLibraries)
 
 cpack_add_install_type(Full DISPLAY_NAME "All")
-
-set(VERSION ${CPACK_PACKAGE_VERSION})

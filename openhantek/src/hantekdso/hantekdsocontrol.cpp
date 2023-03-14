@@ -32,7 +32,7 @@ HantekDsoControl::HantekDsoControl( ScopeDevice *device, const DSOModel *model, 
     // Apply special requirements by the devices model
     model->applyRequirements( this );
 
-    getCalibrationValues();
+    getCalibrationFromIniFile();
 
     stateMachineRunning = true;
 }
@@ -138,7 +138,6 @@ Dso::ErrorCode HantekDsoControl::setRecordTime( double duration ) {
         return Dso::ErrorCode::CONNECTION;
 
     if ( duration == 0.0 ) {
-        duration = controlsettings.samplerate.target.duration;
         return Dso::ErrorCode::NONE;
     } else {
         controlsettings.samplerate.target.duration = duration;
@@ -255,7 +254,7 @@ Dso::ErrorCode HantekDsoControl::setGain( ChannelID channel, double gain ) {
         qDebug() << "  HDC::setGain()" << channel << gain;
     static uint8_t lastGain[ 2 ] = { 0xFF, 0xFF };
     gain /= controlsettings.voltage[ channel ].probeAttn; // gain needs to be scaled by probe attenuation
-    // Find lowest gain voltage thats at least as high as the requested
+    // Find lowest gain voltage that's at least as high as the requested
     uint8_t gainID;
     for ( gainID = 0; gainID < specification->gain.size() - 1; ++gainID )
         if ( specification->gain[ gainID ].Vdiv >= gain )
@@ -456,7 +455,7 @@ unsigned HantekDsoControl::getRecordLength() const {
 }
 
 
-Dso::ErrorCode HantekDsoControl::getCalibrationValues() {
+Dso::ErrorCode HantekDsoControl::getCalibrationFromIniFile() {
     // Persistent storage: unique offset/gain calibration file:
     // Linux, Unix, macOS: "$HOME/.config/OpenHantek/DSO-6022BE_NNNNNNNNNNNN_calibration.ini"
     // Windows: "%APPDATA%\OpenHantek\DSO-6022BE_NNNNNNNNNNNN_calibration.ini"
@@ -764,6 +763,7 @@ void HantekDsoControl::convertRawDataToSamples() {
             offsetFine = controlsettings.calibrationValues->fine.hs.step[ gainIndex ][ channel ];
         }
         // calibration values from EEPROM
+        channelOffset[ channel ] = offsetRaw;
         double offsetCalibration = bytesToOffset( offsetRaw, offsetFine );
         double gainCalibration = byteToGain( controlsettings.calibrationValues->gain.step[ gainIndex ][ channel ] );
         // Convert data from the oscilloscope and write it into the channel sample buffer
@@ -833,7 +833,7 @@ void HantekDsoControl::convertRawDataToSamples() {
 
 /// \brief Updates the interval of the periodic thread timer.
 void HantekDsoControl::updateInterval() {
-    // Check the current oscilloscope state everytime 25% of the time
+    // Check the current oscilloscope state every time 25% of the time
     //  the buffer should be refilled (-> acquireInterval in ms)
     // Use real 100% rate for demo device
     int sampleInterval = int( getSamplesize() * 1000.0 / controlsettings.samplerate.current );

@@ -2,8 +2,8 @@
 
 #pragma once
 
+#include <QCoreApplication>
 #include <QPointF>
-#include <QString>
 
 #include "hantekdso/controlspecification.h"
 #include "hantekdso/enums.h"
@@ -65,8 +65,22 @@ struct DsoSettingsScopeSpectrum : public DsoSettingsScopeChannel {
 
 /// \brief Holds the settings for the power and frequency analysis.
 struct DsoSettingsScopeAnalysis {
+    double spectrumReference = 0.0; ///< Reference level for spectrum in dBV
     bool calculateDummyLoad = false;
     unsigned dummyLoad = 50; ///< Dummy load in  Ohms
+    QString dBsuffixStrings[ 3 ] = { QCoreApplication::translate( "DsoSettingsScopeAnalysis", "V" ),
+                                     QCoreApplication::translate( "DsoSettingsScopeAnalysis", "u" ),
+                                     QCoreApplication::translate( "DsoSettingsScopeAnalysis", "m" ) };
+    int dBsuffixIndex = 0; // dBV is default
+    QString dBsuffix() {   // use current index
+        return dBsuffixStrings[ dBsuffixIndex ];
+    };
+    QString dBsuffix( int index ) {
+        if ( index >= 0 && index < 3 )       // valid suffix index
+            return dBsuffixStrings[ index ]; // show this value
+        else
+            return QString();
+    };
     bool calculateTHD = false;
     bool showNoteValue = false;
 };

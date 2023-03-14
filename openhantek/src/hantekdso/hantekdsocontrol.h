@@ -2,7 +2,12 @@
 
 #pragma once
 
-#define NOMINMAX // disable windows.h min/max global methods
+#ifdef Q_OS_WIN
+#ifndef NOMINMAX
+#define NOMINMAX 1 // disable windows.h min/max global methods
+#endif
+#endif
+
 #include <limits>
 
 #include "controlsettings.h"
@@ -129,7 +134,7 @@ class HantekDsoControl : public QObject {
     unsigned getRecordLength() const;
     void setDownsampling( unsigned downsampling ) { downsamplingNumber = downsampling; }
     bool replaceCalibrationEEPROM = false;
-    Dso::ErrorCode getCalibrationValues();
+    Dso::ErrorCode getCalibrationFromIniFile();
     Dso::ErrorCode getCalibrationFromEEPROM();
     Dso::ErrorCode updateCalibrationValues( bool useEEPROM = false );
     Dso::ErrorCode writeCalibrationToEEPROM();
@@ -171,7 +176,7 @@ class HantekDsoControl : public QObject {
     const DSOModel *model;                          ///< The attached scope model
     const Dso::ControlSpecification *specification; ///< The specifications of the device
     Dso::ControlSettings controlsettings;           ///< The current settings of the device
-    const DsoSettingsScope *scope = nullptr;        ///< Global scope parameters and configuations
+    const DsoSettingsScope *scope = nullptr;        ///< Global scope parameters and configurations
 
     // Results
     unsigned downsamplingNumber = 1; ///< Number of downsamples to reduce sample rate
@@ -197,6 +202,7 @@ class HantekDsoControl : public QObject {
     }
     Raw raw;
     unsigned debugLevel = 0;
+    uint8_t channelOffset[ 2 ] = { 0x80, 0x80 };
 
 #define dprintf( level, fmt, ... )               \
     do {                                         \
@@ -216,7 +222,7 @@ class HantekDsoControl : public QObject {
     /// \return The samplerate that has been set, 0.0 on error.
     Dso::ErrorCode setSamplerate( double samplerate = 0.0 );
 
-    /// \brief Sets the time duration of one aquisition by adapting the samplerate.
+    /// \brief Sets the time duration of one acquisition by adapting the samplerate.
     /// \param duration The record time duration that should be met (s), 0.0 to
     /// restore current record time.
     /// \return The record time duration that has been set, 0.0 on error.

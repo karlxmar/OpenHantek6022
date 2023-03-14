@@ -53,19 +53,6 @@ DsoConfigScopePage::DsoConfigScopePage( DsoSettings *settings, QWidget *parent )
     graphGroup = new QGroupBox( tr( "Graph" ) );
     graphGroup->setLayout( graphLayout );
 
-    // Cursor measurement group
-    cursorsLabel = new QLabel( tr( "Position" ) );
-    cursorsComboBox = new QComboBox();
-    cursorsComboBox->addItem( tr( "Left" ), Qt::LeftToolBarArea );
-    cursorsComboBox->addItem( tr( "Right" ), Qt::RightToolBarArea );
-    cursorsComboBox->setCurrentIndex( settings->view.cursorGridPosition == Qt::LeftToolBarArea ? 0 : 1 );
-    cursorsLayout = new QGridLayout();
-    row = 0;
-    cursorsLayout->addWidget( cursorsLabel, row, 0 );
-    cursorsLayout->addWidget( cursorsComboBox, row, 1 );
-    cursorsGroup = new QGroupBox( tr( "Cursors" ) );
-    cursorsGroup->setLayout( cursorsLayout );
-
     // Zoom group
     zoomImageCheckBox = new QCheckBox( tr( "Export 1:1 zoomed screen in double height" ) );
     zoomImageCheckBox->setChecked( settings->view.zoomImage );
@@ -73,12 +60,20 @@ DsoConfigScopePage::DsoConfigScopePage( DsoSettings *settings, QWidget *parent )
     zoomHeightComboBox = new QComboBox();
     zoomHeightComboBox->addItems( { "1", "2", "4", "8", "16" } );
     zoomHeightComboBox->setCurrentIndex( settings->view.zoomHeightIndex );
+    exportScaleLabel = new QLabel( tr( "Upscale exported images" ) );
+    exportScaleSpinBox = new QSpinBox();
+    exportScaleSpinBox->setMinimum( 1 );
+    exportScaleSpinBox->setMaximum( 16 );
+    exportScaleSpinBox->setValue( settings->view.exportScaleValue );
     zoomLayout = new QGridLayout();
     row = 0;
     zoomLayout->addWidget( zoomHeightLabel, row, 0 );
     zoomLayout->addWidget( zoomHeightComboBox, row, 1 );
     ++row;
     zoomLayout->addWidget( zoomImageCheckBox, row, 0 );
+    ++row;
+    zoomLayout->addWidget( exportScaleLabel, row, 0 );
+    zoomLayout->addWidget( exportScaleSpinBox, row, 1 );
     zoomGroup = new QGroupBox( tr( "Zoom" ) );
     zoomGroup->setLayout( zoomLayout );
 
@@ -111,7 +106,6 @@ DsoConfigScopePage::DsoConfigScopePage( DsoSettings *settings, QWidget *parent )
     mainLayout->addWidget( horizontalGroup );
     mainLayout->addWidget( graphGroup );
     mainLayout->addWidget( zoomGroup );
-    mainLayout->addWidget( cursorsGroup );
     mainLayout->addWidget( configurationGroup );
     mainLayout->addStretch( 1 );
 
@@ -127,10 +121,10 @@ void DsoConfigScopePage::saveSettings() {
     settings->scope.horizontal.acquireInterval = acquireIntervalSiSpinBox->value();
     settings->view.interpolation = Dso::InterpolationMode( interpolationComboBox->currentIndex() );
     settings->view.digitalPhosphorDepth = unsigned( digitalPhosphorDepthSpinBox->value() );
-    settings->view.cursorGridPosition = Qt::ToolBarArea( cursorsComboBox->currentData().toUInt() );
     settings->alwaysSave = saveOnExitCheckBox->isChecked();
     if ( defaultSettingsCheckBox->isChecked() )
         settings->configVersion = 0;
     settings->view.zoomImage = zoomImageCheckBox->isChecked();
     settings->view.zoomHeightIndex = zoomHeightComboBox->currentIndex();
+    settings->view.exportScaleValue = exportScaleSpinBox->value();
 }

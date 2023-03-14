@@ -11,6 +11,7 @@
 #include <QGroupBox>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QPushButton>
 #include <QSpinBox>
 #include <QVBoxLayout>
 
@@ -36,7 +37,16 @@ class DsoConfigAnalysisPage : public QWidget {
     QLabel *windowFunctionLabel;
     QComboBox *windowFunctionComboBox;
 
-    QLabel *referenceLevelLabel;
+    QGroupBox *referenceGroup;
+    QGridLayout *referenceLayout;
+    QPushButton *dBVButton;
+    QPushButton *dBuButton;
+    QPushButton *dBmButton;
+    QLabel *dBVLabel;
+    QLabel *dBuLabel;
+    QLabel *dBmLabel;
+    int dBsuffixIndex = 0;
+    QGridLayout *referenceLevelButtonLayout;
     QDoubleSpinBox *referenceLevelSpinBox;
     QLabel *referenceLevelUnitLabel;
     QHBoxLayout *referenceLevelLayout;
@@ -51,6 +61,11 @@ class DsoConfigAnalysisPage : public QWidget {
 
     QGroupBox *analysisGroup;
     QGridLayout *analysisLayout;
+
+    QGroupBox *cursorsGroup;
+    QGridLayout *cursorsLayout;
+    QLabel *cursorsLabel;
+    QComboBox *cursorsComboBox;
 
     QCheckBox *dummyLoadCheckbox;
     QSpinBox *dummyLoadSpinBox;

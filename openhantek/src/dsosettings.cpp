@@ -239,8 +239,6 @@ void DsoSettings::load() {
     // Post processing
     if ( storeSettings->contains( "spectrumLimit" ) )
         analysis.spectrumLimit = storeSettings->value( "spectrumLimit" ).toDouble();
-    if ( storeSettings->contains( "spectrumReference" ) )
-        analysis.spectrumReference = storeSettings->value( "spectrumReference" ).toDouble();
     if ( storeSettings->contains( "spectrumWindow" ) ) {
         analysis.spectrumWindow = Dso::WindowFunction( storeSettings->value( "spectrumWindow" ).toInt() );
         if ( analysis.spectrumWindow > Dso::LastWindowFunction )
@@ -248,6 +246,10 @@ void DsoSettings::load() {
     }
     // Analysis
     storeSettings->beginGroup( "analysis" );
+    if ( storeSettings->contains( "spectrumReference" ) )
+        scope.analysis.spectrumReference = storeSettings->value( "spectrumReference" ).toDouble();
+    if ( storeSettings->contains( "dBsuffixIndex" ) )
+        scope.analysis.dBsuffixIndex = storeSettings->value( "dBsuffixIndex" ).toInt();
     if ( storeSettings->contains( "calculateDummyLoad" ) )
         scope.analysis.calculateDummyLoad = storeSettings->value( "calculateDummyLoad" ).toBool();
     if ( storeSettings->contains( "dummyLoad" ) )
@@ -315,6 +317,8 @@ void DsoSettings::load() {
         view.zoomHeightIndex = storeSettings->value( "zoomHeightIndex" ).toInt();
     if ( storeSettings->contains( "zoomImage" ) )
         view.zoomImage = storeSettings->value( "zoomImage" ).toBool();
+    if ( storeSettings->contains( "exportScaleValue" ) )
+        view.exportScaleValue = storeSettings->value( "exportScaleValue" ).toInt();
     if ( storeSettings->contains( "cursorGridPosition" ) )
         view.cursorGridPosition = Qt::ToolBarArea( storeSettings->value( "cursorGridPosition" ).toUInt() );
     if ( storeSettings->contains( "cursorsVisible" ) )
@@ -329,7 +333,7 @@ void DsoSettings::load() {
 
 
 // save the persistent scope settings
-// called by "DsoSettings::saveToFile()", "MainWindow::closeEvent" and explicitely by "ui->actionSave"
+// called by "DsoSettings::saveToFile()", "MainWindow::closeEvent" and explicitly by "ui->actionSave"
 void DsoSettings::save() {
     // Use default configuration after restart?
     if ( 0 == configVersion ) {
@@ -430,11 +434,12 @@ void DsoSettings::save() {
 
     // Post processing
     storeSettings->setValue( "spectrumLimit", analysis.spectrumLimit );
-    storeSettings->setValue( "spectrumReference", analysis.spectrumReference );
     storeSettings->setValue( "spectrumWindow", unsigned( analysis.spectrumWindow ) );
 
     // Analysis
     storeSettings->beginGroup( "analysis" );
+    storeSettings->setValue( "spectrumReference", scope.analysis.spectrumReference );
+    storeSettings->setValue( "dBsuffixIndex", scope.analysis.dBsuffixIndex );
     storeSettings->setValue( "calculateDummyLoad", scope.analysis.calculateDummyLoad );
     storeSettings->setValue( "dummyLoad", scope.analysis.dummyLoad );
     storeSettings->setValue( "calculateTHD", scope.analysis.calculateTHD );
@@ -479,6 +484,7 @@ void DsoSettings::save() {
     storeSettings->setValue( "zoom", view.zoom );
     storeSettings->setValue( "zoomHeightIndex", view.zoomHeightIndex );
     storeSettings->setValue( "zoomImage", view.zoomImage );
+    storeSettings->setValue( "exportScaleValue", view.exportScaleValue );
     storeSettings->setValue( "cursorGridPosition", view.cursorGridPosition );
     storeSettings->setValue( "cursorsVisible", view.cursorsVisible );
     storeSettings->endGroup(); // view
